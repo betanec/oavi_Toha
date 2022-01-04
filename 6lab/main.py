@@ -143,8 +143,8 @@ def distance(s0:pd.Series, s1:pd.Series):
 
 
 def main():
-    height = [ 15]
-    fonts = ["EspacioCuadrado-6526.ttf", "Banbury-65Aq.ttf", "DunnoFinedRegular-0zDr.ttf"]
+    height = [15]
+    fonts = ["minecraft-title-cyrillic-regular3.ttf", "d9464-arkhip_font.ttf", "catorze27style1-semibold.ttf"]
 
     threshould = [0.95, 0.6]
     space = 4
@@ -159,7 +159,7 @@ def main():
 
 
     base_h = 12
-    base_fnt = ImageFont.truetype(f"C:\\DEV\\oavi\\font\\{fonts[0]}", base_h)
+    base_fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[1]}", base_h)
     base_data = pd.DataFrame({cl_name:[] for cl_name, _ in header_names})
     for idx, char in enumerate(progress.bar(alphabet)):
         char_size = base_fnt.getsize(char)
@@ -196,7 +196,7 @@ def main():
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        fnt = ImageFont.truetype(f"C:\\DEV\\oavi\\font\\{fonts[0]}", h)
+        fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[1]}", h)
 
         img = Image.new('RGB', (space+fnt.getsize(alphabet)[0]+space, space+h+space+space), color = WHITE)
         d = ImageDraw.Draw(img)

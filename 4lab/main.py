@@ -104,7 +104,7 @@ header_names = (
 
 def main():
     height = [12, 15, 30]
-    fonts = ["Times New Roman.ttf", "sfns-display-bold.ttf", "teddy-bear.ttf"] #шрифты
+    fonts = ["minecraft-title-cyrillic-regular3.ttf", "d9464-arkhip_font.ttf", "catorze27style1-semibold.ttf"] #["Times New Roman.ttf", "sfns-display-bold.ttf", "teddy-bear.ttf"] #шрифты 
 
     space = 4
 
@@ -115,8 +115,8 @@ def main():
         directory = f"{base_directory}/alpabet{h}"
         if not os.path.exists(directory):
             os.makedirs(directory)
-        fnt = ImageFont.truetype(f"C:\\DEV\\oavi\\font\\{f}", h)# путь к 
-        base_fnt = ImageFont.truetype(f"C:\\DEV\\oavi\\font\\{fonts[0]}", h)
+        fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{f}", h)# путь к 
+        base_fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[0]}", h)
 
         data = pd.DataFrame({cl_name:[] for cl_name, _ in header_names})
 

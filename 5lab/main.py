@@ -67,9 +67,9 @@ def move_point(p0:Point_type, p1:Point_type):
 
 def main():
     height = [12, 15, 30]
-    fonts = ["Banbury-65Aq.ttf", "EspacioCuadrado-6526.ttf", "DunnoFinedRegular-0zDr.ttf"]
+    fonts = ["minecraft-title-cyrillic-regular3.ttf", "d9464-arkhip_font.ttf", "catorze27style1-semibold.ttf"]
 
-    threshould = [0.9, 0.6] #[0.9, 0.6]
+    threshould =  [0.9, 0.6]# 1, 2
     space = 4
 
     base_directory = "pics"
@@ -79,7 +79,7 @@ def main():
         directory = f"{base_directory}/alpabet{h}"
         if not os.path.exists(directory):
             os.makedirs(directory)
-        fnt = ImageFont.truetype(f"C:\\DEV\\oavi\\font\\{f}", h)
+        fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{f}", h)
 
         img = Image.new('RGB', (space+fnt.getsize(alphabet)[0]+space, space+h+space+space), color = WHITE)
         d = ImageDraw.Draw(img)
