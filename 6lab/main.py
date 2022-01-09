@@ -143,10 +143,10 @@ def distance(s0:pd.Series, s1:pd.Series):
 
 
 def main():
-    height = [15]
-    fonts = ["minecraft-title-cyrillic-regular3.ttf", "d9464-arkhip_font.ttf", "catorze27style1-semibold.ttf"]
+    height = [12, 15,  30] #
+    fonts = ["minecraft-title-cyrillic-regular3.ttf"]
 
-    threshould = [0.95, 0.6]
+    threshould = [0.95, 0.6] # сумма
     space = 4
 
     base_directory = "pics"
@@ -159,7 +159,7 @@ def main():
 
 
     base_h = 12
-    base_fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[1]}", base_h)
+    base_fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[0]}", base_h)
     base_data = pd.DataFrame({cl_name:[] for cl_name, _ in header_names})
     for idx, char in enumerate(progress.bar(alphabet)):
         char_size = base_fnt.getsize(char)
@@ -196,7 +196,7 @@ def main():
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[1]}", h)
+        fnt = ImageFont.truetype(f"C:\\DEV\\oavi_Toha\\font\\{fonts[0]}", h)
 
         img = Image.new('RGB', (space+fnt.getsize(alphabet)[0]+space, space+h+space+space), color = WHITE)
         d = ImageDraw.Draw(img)
@@ -274,8 +274,6 @@ def main():
             data_to_print = data_to_print.append(tmp_row)
         data_to_print.to_csv(f'{directory}/res_data_{h}.csv')
         print(data_to_print)
-
-
 
 
 
